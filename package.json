@@ -1,0 +1,11 @@
+{
+  "name": "react-scratch",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "guonanci <yiminanci@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
