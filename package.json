@@ -10,6 +10,10 @@
     "build": "npm run lint&&webpack --config build/build.js",
     "lint": "eslint --ext .js src&&tslint --ext .ts,.tsx src"
   },
+  "engines": {
+    "node": ">= 8.0.0",
+    "npm": ">= 4.0.0"
+  },
   "devDependencies": {
     "@types/react": "^16.7.3",
     "@types/react-dom": "^16.0.9",
@@ -19,11 +23,27 @@
     "babel-plugin-import": "^1.11.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "chalk": "^2.4.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.1",
     "eslint": "^5.8.0",
     "express": "^4.16.4",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.10.0",
+    "opn": "^5.4.0",
+    "ora": "^3.0.0",
+    "portfinder": "^1.0.19",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.0",
+    "semver": "^5.6.0",
+    "shelljs": "^0.8.3",
     "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "tslint": "^5.11.0",
     "typescript": "^3.1.6",
+    "url-loader": "^1.1.2",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
@@ -37,6 +57,7 @@
     "moment": "^2.22.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-router": "^4.3.1",
     "redux": "^4.0.1"
   }
 }
