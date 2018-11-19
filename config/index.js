@@ -15,12 +15,13 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        'target': 'https://qz-uat.xinyan.com',
-        'changeOrigin': true,
-        'pathRewrite': { '^/api': '/api' }
-      }
+        target: 'https://qz-uat.xinyan.com',
+        changeOrigin: true,
+        pathRewrite: { '^/api': '/api' },
+      },
     },
     cssSourceMap: false,
+    devtool: 'eval-source-map', // cheap-module-eval-source-map
   },
   build: {
     mode: 'production',
@@ -35,6 +36,5 @@ module.exports = {
     // Run the build command with an extra arguments to View the bundle analyzer report after build finishes: `npm run
     // build --report`. Set to `true` or `false` to always turn it on or off.
     bundleAnalyzerReport: process.env.npm_config_report,
-
-  }
-}
+  },
+};
