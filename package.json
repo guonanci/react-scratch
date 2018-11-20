@@ -8,7 +8,7 @@
     "start": "npm run dev",
     "dev": "npm run lint&&webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "build": "npm run lint&&webpack --config build/build.js",
-    "lint": "eslint --ext .js src&&tslint --ext .ts,.tsx src"
+    "lint": "tslint --ext .ts,.tsx src"
   },
   "engines": {
     "node": ">= 8.0.0",
