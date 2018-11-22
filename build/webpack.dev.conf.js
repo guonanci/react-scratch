@@ -9,13 +9,16 @@ const portfinder = require('portfinder')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
-  module: {
-    rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
-  },
-  // cheap-module-eval-source-map is faster for development
-  devtool: config.dev.devtool,
+  // module: {
+  //   rules: utils.styleLoaders({
+  //     sourceMap: config.dev.cssSourceMap,
+  //     usePostCSS: true,
+  //   }),
+  // },
+  // // cheap-module-eval-source-map is faster for development
+  // devtool: config.dev.devtool,
 
-  // these devServer options should be customized in /config/index.js
+  // // these devServer options should be customized in /config/index.js
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: true,
@@ -24,39 +27,46 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     host: process.env.HOST || config.dev.host,
     port: process.env.PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
-    overlay: config.dev.errorOverlay ? {
-      warnings: true,
-      errors: true,
-    } : false,
+    overlay: config.dev.errorOverlay
+      ? {
+          warnings: false,
+          errors: true,
+        }
+      : false,
     publicPath: config.dev.assetsPublicPath,
     proxy: config.dev.proxyTable,
     quiet: true, // necessary for FriendlyErrorPlugin
     watchOptions: {
-      poll: config.dev.poll
-    }
-
+      poll: config.dev.poll,
+    },
   },
   plugins: [
+    // new webpack.DefinePlugin({
+    //   'process.env': require('../config/dev.env'),
+    // }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
       inject: true,
-    })
+    }),
   ],
   optimization: {
     occurrenceOrder: true,
     noEmitOnErrors: true,
-  }
-})
+  },
+});
 
-module.exports = new Promise((resolve, rejct) => {
+module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
+  // console.log('promised in', portfinder.basePort)
   portfinder.getPort((err, port) => {
     if (err) {
+      // console.log('promised in err', err)
       reject(err)
     } else {
+      // console.log('portfinder port', port)
       process.env.PORT = port
       devWebpackConfig.devServer.port = port
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
@@ -65,6 +75,7 @@ module.exports = new Promise((resolve, rejct) => {
         },
         onErrors: config.dev.notifyOnErrors ? utils.createNotifierCallback() : undefined
       }))
+      // console.log('portfinder webpackConfig', devWebpackConfig);
 
       resolve(devWebpackConfig)
     }

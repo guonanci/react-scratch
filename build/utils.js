@@ -1,3 +1,4 @@
+
 const path = require('path')
 const config = require('../config')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
@@ -62,5 +63,37 @@ exports.cssLoaders = function (options) {
         }
       ]
     }
+  }
+}
+
+// Generate loaders for standalone style files
+exports.styleLoaders = function (options) {
+  const output = {}
+  const loaders = exports.cssLoaders(options)
+  for (let extension in loaders) {
+    const loader = loaders[extension]
+    output.push({
+      test: new RegExp('\\.' + extension + '$'),
+      use: loader,
+    })
+  }
+  return output
+}
+
+exports.createNotifierCallback = function () {
+  const notifier = require('node-notifier')
+
+  return (severity, errors) => {
+    if (severity !== 'error') {
+      return
+    }
+    const error = errors[0]
+
+    const filename = error.file && error.file.split('!').pop()
+    notifier.notify({
+      title: pkg.name,
+      message: severity + ': ' + error.name,
+      subtitle: filename || '',
+    })
   }
 }

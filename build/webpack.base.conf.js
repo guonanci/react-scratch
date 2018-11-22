@@ -1,5 +1,6 @@
 const path = require('path')
-const utils = require('utils')
+const utils = require('./utils')
+const tsImportPluginFactory = require('ts-import-plugin')
 const config = require("../config");
 
 function resolve(dir) {
@@ -20,9 +21,9 @@ module.exports = {
         : config.dev.assetsPublicPath
   },
   externals: {
-    react: "React",
-    "react-dom": "ReactDOM",
-    "immutable": "Immutable"
+    // react: "React",
+    // "react-dom": "ReactDOM",
+    // "immutable": "Immutable"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
@@ -39,6 +40,11 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader",
+        options: {
+          getCustomTransformers: () => ({
+            before: [ tsImportPluginFactory() ]
+          })
+        },
         include: [resolve("src")]
       },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.

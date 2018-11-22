@@ -1,16 +1,15 @@
 import * as React from 'react' // difference in option between TypeScript and Babel on handling CommonJS modules.
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+
+import store from './store'
+
 import { Button } from 'antd'
 
-class App extends React.Component {
-  render () {
-    return (
-      <div className="app">
-        <Button type='primary'></Button>
-      </div>
-    )
-  }
-}
+const App = (
+  <Provider store={store}>
+    <Button type='primary'>Button</Button>
+  </Provider>
+)
 
-export default App
+render(App, document.getElementById('app'))

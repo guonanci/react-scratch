@@ -10,7 +10,7 @@ module.exports = {
     showEslintErrorsInOverlay: false,
     poll: false,
     host: 'localhost',
-    port: 7777,
+    port: 8888,
     assetsSubDir: 'static',
     assetsPublicPath: '/',
     proxyTable: {
