@@ -22,12 +22,17 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "strict": true,
+    "strictFunctionTypes": true,
     "pretty": true,
     "removeComments": true,
     "outDir": "dist/",
     "sourceMap": true,
-    // "types": ["jest"],
-    "target": "es2015"
+    "types": ["jest", "node"],
+    "target": "es2015",
+    "paths": {
+      "@/*": [ "src/*" ],
+      "common/*": [ "src/common/*" ]
+    }
   },
   "include": [
     "./src/**/*", "typings/*"

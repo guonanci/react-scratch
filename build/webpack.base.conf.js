@@ -21,17 +21,14 @@ module.exports = {
         : config.dev.assetsPublicPath
   },
   externals: {
-    // react: "React",
-    // "react-dom": "ReactDOM",
+    "react": "React",
+    "react-dom": "ReactDOM",
     // "immutable": "Immutable"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
     alias: {
-      "@": resolve("src"),
-      assets: resolve("src/assets"),
-      styles: resolve("src/styles"),
-      pages: resolve("src/pages"),
+      "@": resolve("./src"),
       common: resolve("src/common")
     }
   },
