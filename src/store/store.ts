@@ -23,9 +23,9 @@ function configureStore(initialState?: object) {
 
 // pass an optional param to rehydrate state on app start
 const store = configureStore()
-// export store singleton instance
 
 epicMiddleware.run(rootEpic)
 
+// export store singleton instance
 export default store
 

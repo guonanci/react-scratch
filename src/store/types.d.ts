@@ -1,13 +1,11 @@
 import { StateType } from 'typesafe-actions'
 import {
-  RouterAction,
-  LocationChangeAction,
-  CallHistoryMethodAction,
+  RouterAction
 } from 'connected-react-router'
-type ReactRouterAction = RouterAction | LocationChangeAction | CallHistoryMethodAction
+type ReactRouterAction = RouterAction
 
 
-import { CountersAction } from '../features/counters'
+import { CountersAction } from '@/features/counters'
 import rootReducer from './root-reducer'
 
 

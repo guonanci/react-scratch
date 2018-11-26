@@ -9,9 +9,8 @@ export const history = createBrowserHistory()
 
 
 const createRootReducer = (h: any) => combineReducers({
-  counters: countersReducer,
   router: connectRouter(h),
+  counters: countersReducer,
 })
-const rootReducer = createRootReducer(history)
 
-export default rootReducer
+export default createRootReducer(history) // rootReducer
