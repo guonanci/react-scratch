@@ -1,12 +1,17 @@
 import { combineReducers } from 'redux'
 
 import { connectRouter } from 'connected-react-router'
+import { createBrowserHistory } from 'history'
+import { countersReducer } from '@/features/counters'
 
-import { countersReducer } from '../features/counters'
+export const history = createBrowserHistory()
 
-const rootReducer = (history: any) => combineReducers({
+
+
+const createRootReducer = (h: any) => combineReducers({
   counters: countersReducer,
-  router: connectRouter(history),
+  router: connectRouter(h),
 })
+const rootReducer = createRootReducer(history)
 
 export default rootReducer

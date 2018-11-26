@@ -15,7 +15,9 @@
     "npm": ">= 4.0.0"
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.9",
     "@types/enzyme": "^3.1.15",
+    "@types/history": "^4.7.2",
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.10",
     "@types/prop-types": "^15.5.6",
@@ -23,7 +25,6 @@
     "@types/react-dom": "^16.0.9",
     "@types/react-redux": "^6.0.9",
     "@types/react-router-dom": "^4.3.1",
-    "@types/react-router-redux": "^5.0.16",
     "awesome-typescript-loader": "^5.2.1",
     "chalk": "^2.4.1",
     "compression-webpack-plugin": "^2.0.0",

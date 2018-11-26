@@ -1,14 +1,16 @@
 import { StateType } from 'typesafe-actions'
-import { RouterAction, LocationChangeAction } from 'connected-react-router'
-type ReactRouterAction = RouterAction | LocationChangeAction
-import { createBrowserHistory } from 'history'
+import {
+  RouterAction,
+  LocationChangeAction,
+  CallHistoryMethodAction,
+} from 'connected-react-router'
+type ReactRouterAction = RouterAction | LocationChangeAction | CallHistoryMethodAction
 
-import { CountersAction } from "../features/counters"
-import createRootReducer from './root-reducer'
 
-const history = createBrowserHistory()
+import { CountersAction } from '../features/counters'
+import rootReducer from './root-reducer'
 
-const rootReducer = createRootReducer(history)
+
 
 
 declare module 'Types' {
