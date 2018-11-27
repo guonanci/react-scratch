@@ -16,12 +16,12 @@ type Theme = { theme: React.CSSProperties; toggleTheme?: () => void }
 const ThemeContext = React.createContext<Theme>({ theme: themes.light })
 
 // Provider
-interface State {
+interface IState {
   theme: Theme['theme']
 }
 
-export class App extends React.Component<{}, State> {
-  readonly state: State = { theme: themes.light }
+export class App extends React.Component<{}, IState> {
+  readonly state: IState = { theme: themes.light }
   // constructor (props: object) {
   //   super(props)
   //   this.toggleTheme = this.toggleTheme.bind(this)
@@ -45,9 +45,9 @@ export class App extends React.Component<{}, State> {
 }
 
 // Consumer
-interface ThemeButtonProps {}
+interface IThemeButtonProps {}
 
-function ToggleThemeButton (props: ThemeButtonProps) {
+function ToggleThemeButton (props: IThemeButtonProps) {
   return (
     <ThemeContext.Consumer>
       {({ theme, toggleTheme }) => <button style={theme} onClick={toggleTheme} {...props} />}
