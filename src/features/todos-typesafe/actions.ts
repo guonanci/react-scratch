@@ -13,7 +13,7 @@ export const add = createStandardAction(ADD).map(
       ...payload,
       id: cuid(),
       completed: false,
-    } as Todo,
+    } as Todo
   })
 )
 

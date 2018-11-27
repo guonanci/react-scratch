@@ -49,8 +49,8 @@
         {
           "singlineline": "never",
           "multiline": {
-            "objects": "always",
-            "array": "always",
+            "objects": "ignore",
+            "array": "ignore",
             "functions": "ignore",
             "typeLiterals": "ignore"
           },

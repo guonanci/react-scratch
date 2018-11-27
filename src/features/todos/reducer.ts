@@ -4,8 +4,6 @@ import { ADD, CHANGE_FILTER, TOGGLE } from './constants'
 import { combineReducers } from 'redux'
 import { Todo, TodosFilter } from './models'
 
-
-
 export interface ITodosState {
   readonly todos: Todo[]
   readonly todosFilter: TodosFilter
@@ -15,7 +13,7 @@ export type TodosAction = ActionType<typeof actions>
 
 export default combineReducers<ITodosState, TodosAction>({
   todos: (state = [], action) => {
-    switch(action.type) {
+    switch (action.type) {
       case ADD:
         return [...state, action.payload]
 
@@ -37,5 +35,5 @@ export default combineReducers<ITodosState, TodosAction>({
       default:
         return state
     }
-  }
+  },
 })

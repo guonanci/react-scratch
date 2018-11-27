@@ -39,4 +39,3 @@ person.surname = createSurname('Mate') // OK!
 let str: string
 str = person.name.toString()
 str = person.surname
-

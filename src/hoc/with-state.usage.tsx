@@ -10,4 +10,3 @@ export default () => (
   <SFCCounterWithState label={'SFCCounterWithState'} />
 
 )
-

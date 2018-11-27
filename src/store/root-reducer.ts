@@ -6,8 +6,6 @@ import { countersReducer } from '@/features/counters'
 
 export const history = createBrowserHistory()
 
-
-
 const createRootReducer = (h: any) => combineReducers({
   router: connectRouter(h),
   counters: countersReducer,

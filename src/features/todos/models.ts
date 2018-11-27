@@ -7,5 +7,5 @@ export type Todo = {
 export enum TodosFilter {
   All = '',
   Completed = 'completed',
-  Active = 'active'
+  Active = 'active',
 }

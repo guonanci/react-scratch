@@ -19,18 +19,17 @@ export const Todos = {
     .filter(t => t.id !== id)),
 }
 
-
 // Real API
-const URL = '/todos'
-export const Todos = {
-  getAll: (pageNumber?: number) =>
-    requests.get(`${URL}?${rangeQueryString(pageSize, pageNumber)}`),
-  get: (id: string) =>
-    requests.get(`${URL}?/${id}`),
-  create: (payload: ITodoModel) =>
-    requests.post(`${URL}`, { payload }),
-  update: (payload: ITodoModel) =>
-    requests.put(`${URL}?${payload.id}`, { todo: removeKeys(payload, [`id`]) }),
-  delete: (id: string) =>
-    requests.delete(`${URL}?/${id}`),
-}
+// const URL = '/todos'
+// export const Todos = {
+//   getAll: (pageNumber?: number) =>
+//     requests.get(`${URL}?${rangeQueryString(pageSize, pageNumber)}`),
+//   get: (id: string) =>
+//     requests.get(`${URL}?/${id}`),
+//   create: (payload: ITodoModel) =>
+//     requests.post(`${URL}`, { payload }),
+//   update: (payload: ITodoModel) =>
+//     requests.put(`${URL}?${payload.id}`, { todo: removeKeys(payload, [`id`]) }),
+//   delete: (id: string) =>
+//     requests.delete(`${URL}?/${id}`),
+// }

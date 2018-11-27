@@ -1,7 +1,7 @@
 const version = process.env.APP_VERSION
 const STORAGE_KEY = `__SERIALIZED_STATE_TREE_v${version}__`
 
-export function saveState<T = object>(storeState: T): boolean {
+export function saveState<T = object> (storeState: T): boolean {
   if (!localStorage) {
     return false
   }
@@ -14,10 +14,9 @@ export function saveState<T = object>(storeState: T): boolean {
     throw new Error('store serialization failied')
   }
 
-
 }
 
-export function loadState<T = object>(): T | undefined {
+export function loadState<T = object> (): T | undefined {
   if (!localStorage) {
     return
   }

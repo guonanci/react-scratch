@@ -12,14 +12,14 @@ const agentInstance = axios.create({
   timeout: 4000,
   headers: {
     common: {
-      Autherization: formatToken(getToken())
-    }
-  }
+      Authorization: formatToken(getToken()),
+    },
+  },
 })
 
 // Public
 export const setToken = (token: string | null) => {
-  agentInstance.defaults.headers.common.Autherization = formatToken(token)
+  agentInstance.defaults.headers.common.Authorization = formatToken(token)
 }
 
 export default agentInstance

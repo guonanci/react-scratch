@@ -7,7 +7,7 @@ export const ErrorMsg: React.FunctionComponent<{ onReset: () => void }> = React.
     <div>
       <h2>{`Sorry there was an unexpected error`}</h2>
       {`To continue: `}
-      <a href="" onClick={onReset}>
+      <a href='' onClick={onReset}>
         {`go to home page`}
       </a>
     </div>

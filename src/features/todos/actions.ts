@@ -12,7 +12,8 @@ export const add = (title: string) =>
     title,
   } as Todo)
 
-  export const toggle = (id: string) => action(TOGGLE, id)
+export const toggle = (id: string) =>
+  action(TOGGLE, id)
 
-  export const changeFilter = (filter: TodosFilter) =>
-    action(CHANGE_FILTER, filter)
+export const changeFilter = (filter: TodosFilter) =>
+  action(CHANGE_FILTER, filter)
