@@ -9,16 +9,16 @@ const portfinder = require('portfinder')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
-  // module: {
-  //   rules: utils.styleLoaders({
-  //     sourceMap: config.dev.cssSourceMap,
-  //     usePostCSS: true,
-  //   }),
-  // },
-  // // cheap-module-eval-source-map is faster for development
-  // devtool: config.dev.devtool,
+  module: {
+    rules: utils.styleLoaders({
+      sourceMap: config.dev.sourceMap,
+      usePostCSS: true,
+    }),
+  },
+  // cheap-module-eval-source-map is faster for development
+  devtool: config.dev.devtool,
 
-  // // these devServer options should be customized in /config/index.js
+  // these devServer options should be customized in /config/index.js
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: true,

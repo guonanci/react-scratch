@@ -5,5 +5,6 @@ import { StatefulCounterWithDefault,  } from '@/components'
 export default () => (
   <StatefulCounterWithDefault
     label={'StatefulCounter'}
+    initialCount={10000}
   />
 )

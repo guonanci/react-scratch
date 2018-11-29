@@ -1,12 +1,12 @@
-import * as React from 'react'
+// import * as React from 'react'
 
-import { withState,  } from '@/hoc'
-import { FCCounter,  } from '@/components'
+// import { withState,  } from '@/hoc'
+// import { FCCounter,  } from '@/components'
 
-const SFCCounterWithState =
-  withState(FCCounter)
+// const FCCounterWithState =
+//   withState(FCCounter)
 
-export default () => (
-  <SFCCounterWithState label={'SFCCounterWithState'} />
+// export default () => (
+//   <FCCounterWithState label={'SFCCounterWithState'} />
 
-)
+// )

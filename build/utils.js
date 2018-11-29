@@ -12,9 +12,12 @@ exports.assetsPath = function (pathArg) {
 exports.cssLoaders = function (options) {
   options = options || {}
 
+  const styleLoader = 'style-loader'
   const cssLoader = {
-    loader: 'css-loader',
+    loader: 'css-loader', // typings-for-css-modules-loader, css-loader
     options: {
+      // modules: true,
+      // namedExport: true,
       sourceMap: options.sourceMap
     }
   }
@@ -28,7 +31,7 @@ exports.cssLoaders = function (options) {
 
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
+    const loaders = options.usePostCSS ? [styleLoader, cssLoader, postcssLoader] : [styleLoader, cssLoader]
     if (loader && loader !== 'scss') {
       loaders.push({
         loader: loader + '-loader',
@@ -38,19 +41,17 @@ exports.cssLoaders = function (options) {
       })
     }
     if (loader === 'scss') {
+      // loaders.push({
+      //   loader: 'typings-for-css-modules-loader',
+      //   options: Object.assign({}, loaderOptions, {
+      //     modules: true,
+      //     namedExport: true,
+      //   })
+      // })
       loaders.push({
-        loader: 'sass' + '-loader',
+        loader: 'sass-loader',
         options: Object.assign({}, loaderOptions, {
           sourceMap: options.sourceMap
-        })
-      })
-      loaders.push({
-        loader: 'sass-resources' + '-loader',
-        options: Object.assign({}, {
-          resources: [path.resolve(__dirname, '../src/styles/mixin.scss'), path.resolve(__dirname,
-            '../src/styles/common.scss')]
-        }, {
-          sourceMap: options.sourceMap,
         })
       })
     }
@@ -62,16 +63,29 @@ exports.cssLoaders = function (options) {
           options: {}
         }
       ]
+    } else {
+      return loaders
     }
+  }
+
+  return {
+    css: generateLoaders(),
+    postcss: generateLoaders(),
+    less: generateLoaders('less', { javascriptEnabled: true }),
+    sass: generateLoaders('sass', { indentedSyntax: true }),
+    scss: generateLoaders('scss'),
+    stylus: generateLoaders('stylus'),
+    styl: generateLoaders('stylus')
   }
 }
 
 // Generate loaders for standalone style files
 exports.styleLoaders = function (options) {
-  const output = {}
+  const output = []
   const loaders = exports.cssLoaders(options)
   for (let extension in loaders) {
     const loader = loaders[extension]
+    // console.log(extension, loaders, loader)
     output.push({
       test: new RegExp('\\.' + extension + '$'),
       use: loader,

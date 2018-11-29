@@ -1,4 +1,4 @@
-export * from './error-message'
+export * from './error-msg'
 export * from './generic-list'
 export * from './fc-counter'
 export * from './fc-spread-attributes'

@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { count } from 'rxjs/operators';
+
 
 export interface IStatefulCounterWithDefaultProps {
   label: string
-  initialCount?: number
+  initialCount: number
 }
 
 interface IDefaultProps {
@@ -27,7 +27,7 @@ export const StatefulCounterWithDefault: React.ComponentClass<IStatefulCounterWi
     }
 
     componentWillReceiveProps ({ initialCount }: IStatefulCounterWithDefaultProps) {
-      if (initialCount != null && initialCount !== this.props.initialCount) {
+      if (initialCount !== this.props.initialCount) {
         this.setState({ count: initialCount })
       }
     }

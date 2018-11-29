@@ -2,7 +2,7 @@ import Types from 'Types'
 
 import { connect,  } from 'react-redux'
 
-import { FCCounter,  } from '@/components'
+import FCCounterUsage from '@/components/fc-counter.usage'
 import { countersActions, countersSelectors } from '@/features/counters'
 
 const mapStateToProps = (state: Types.RootState) => ({
@@ -11,4 +11,5 @@ const mapStateToProps = (state: Types.RootState) => ({
 
 export const FCCounterConnected = connect(mapStateToProps, {
   onIncrement: countersActions.increment,
-})(FCCounter)
+  onDecrement: countersActions.decrement,
+})(FCCounterUsage)

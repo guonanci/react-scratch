@@ -7,9 +7,10 @@ interface InjectProps {
   onReset: () => any
 }
 
-export const withErrorBoundary = <WrappedProps extends InjectProps>(
+export function withErrorBoundary <WrappedProps extends InjectProps> (
   WrappedComponent: React.ComponentType<WrappedProps>
-) => {
+  ) {
+
   type HocProps = Subtract<WrappedProps, InjectProps> & {
     // Here you can extend hoc props
   }
@@ -39,17 +40,18 @@ export const withErrorBoundary = <WrappedProps extends InjectProps>(
     }
 
     render () {
-      const { children, ...restProps } = this.props as {
+      const { children, } = this.props as {
         children: React.ReactNode
       }
       const { error } = this.state
 
       if (error) {
         return (
-          <WrappedComponent
-            {...restProps}
-            onReset={this.handleReset} // injected
-          />
+          <div />
+          // <WrappedComponent
+          //   onReset={this.handleReset} // injected
+          //   {...restProps}
+          // />
         )
       }
 

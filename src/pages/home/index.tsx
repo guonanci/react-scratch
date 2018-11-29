@@ -1,15 +1,15 @@
 import * as React from 'react'
 
-import FCCounter from '@/components/fc-counter.usage'
+import { FCCounterConnected } from '@/connected/fc-counter-connected'
 import FCSpreadAttributes from '@/components/fc-spread-attributes.usage'
 import StatefulCounter from '@/components/stateful-counter.usage'
 import StatefulCounterWithInitialCount from '@/components/stateful-counter-with-default.usage'
 import UserListUsage from '@/components/generic-list.usage'
 
-export function Home () {
+const Home: React.FunctionComponent = () => {
   return (
     <section>
-      <FCCounter />
+      <FCCounterConnected />
       <FCSpreadAttributes />
       <StatefulCounter />
       <StatefulCounterWithInitialCount />
@@ -17,3 +17,4 @@ export function Home () {
     </section>
   )
 }
+export default Home

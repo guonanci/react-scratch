@@ -1,33 +1,33 @@
-import * as React from 'react'
-import { Subtract,  } from 'utility-types'
-import { read } from 'fs';
+// import * as React from 'react'
+// import { Subtract,  } from 'utility-types'
 
-// These props will be subtracted from original component type
-interface InjectedProps {
-  count: number
-  onIncrement: () => any
-}
+// // These props will be subtracted from original component type
+// interface InjectedProps {
+//   count: number
+//   onIncrement: () => any
+//   onDecrement: () => any
+// }
 
-export const withState = <WrappedProps extends InjectedProps>(
-  WrappedComponent: React.ComponentType<WrappedProps>
-) => {
-  // These props will be added to original component type
-  type HocProps = Subtract<WrappedProps, InjectedProps> & {
-    // here you can extend hoc props
-    initialCount?: number
-  }
-  type HocState = {
-    readonly count: number
-  }
+// export const withState = <WrappedProps extends InjectedProps>(
+//   WrappedComponent: React.ComponentType<WrappedProps>
+// ) => {
+//   // These props will be added to original component type
+//   type HocProps = Subtract<WrappedProps, InjectedProps> & {
+//     // here you can extend hoc props
+//     initialCount?: number
+//   }
+//   type HocState = {
+//     readonly count: number
+//   }
 
-  return class WithState extends React.Component<HocProps, HocState> {
-    // Enhance component name for debugging and React-Dev-Tools
-    static displayName = `withState(${WrappedComponent.name})`
-    // reference to original wrapped component
-    static readonly WrappedComponent = WrappedComponent
+//   return class WithState extends React.Component<HocProps, HocState> {
+//     // Enhance component name for debugging and React-Dev-Tools
+//     static displayName = `withState(${WrappedComponent.name})`
+//     // reference to original wrapped component
+//     static readonly WrappedComponent = WrappedComponent
 
-    readonly state: HocState = {
-      count: Number(this.props.initialCount) || 0,
-    }
-  }
-}
+//     readonly state: HocState = {
+//       count: Number(this.props.initialCount) || 0,
+//     }
+//   }
+// }

@@ -1,5 +1,5 @@
 import { ITodoModel } from './models'
-import { resolveWithDelay, rangeQueryString, removeKeys,  } from './utils'
+import { resolveWithDelay,  } from './utils'
 
 const pageSize = 10
 

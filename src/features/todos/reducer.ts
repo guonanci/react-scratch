@@ -4,7 +4,7 @@ import { ADD, CHANGE_FILTER, TOGGLE } from './constants'
 import { combineReducers } from 'redux'
 import { Todo, TodosFilter } from './models'
 
-export interface ITodosState {
+export type ITodosState = {
   readonly todos: Todo[]
   readonly todosFilter: TodosFilter
 }

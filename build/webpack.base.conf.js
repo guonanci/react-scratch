@@ -23,7 +23,7 @@ module.exports = {
   externals: {
     "react": "React",
     "react-dom": "ReactDOM",
-    // "immutable": "Immutable"
+    "immutable": "Immutable"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
@@ -34,15 +34,27 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.ejs$/,
+      //   loader: 'ejs-html-loader',
+      //   options: {
+      //     production: process.env.ENV === 'production'
+      //   }
+      // },
       {
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
+        loader: "awesome-typescript-loader", // awesome-typescript-loader
         options: {
+          // useCache: true,
+          // useBabel: false, // !impotrant
           getCustomTransformers: () => ({
-            before: [ tsImportPluginFactory() ]
+            before: [tsImportPluginFactory({
+              libraryName: 'antd',
+              libraryDirectory: 'es',
+              style: 'css',
+            })]
           })
         },
-        include: [resolve("src")]
       },
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       {

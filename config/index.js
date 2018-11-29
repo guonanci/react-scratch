@@ -20,7 +20,7 @@ module.exports = {
         pathRewrite: { '^/api': '/api' },
       },
     },
-    cssSourceMap: false,
+    sourceMap: false,
     devtool: 'eval-source-map', // cheap-module-eval-source-map
   },
   build: {

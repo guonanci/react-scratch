@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Button,  } from 'antd'
 
 export interface IStatefulCounterProps {
   label: string
@@ -25,9 +26,9 @@ export class StatefulCounter extends React.Component<IStatefulCounterProps, ISta
     return (
       <div>
         <span>{label}: {count}</span>
-        <button type='button' onClick={handleIncrement}>
+        <Button type='dashed' onClick={handleIncrement}>
           {`Increment`}
-        </button>
+        </Button>
       </div>
     )
   }
