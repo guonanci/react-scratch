@@ -14,6 +14,7 @@ export default combineReducers<CountersState, CountersAction>({
   reduxCounter: (state = 0, action) => {
     switch (action.type) {
       case INCREMENT:
+        debugger
         return state + 1 // action: { type: 'INCREMENT' }
       case DECREMENT:
         return state - 1 // action: { type: 'DECREMENT' }

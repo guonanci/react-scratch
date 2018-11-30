@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   dev: {
     mode: 'development',
-    autoOpenBrowser: true,
+    autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
     useEslint: false,

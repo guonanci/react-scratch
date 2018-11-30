@@ -1,8 +1,8 @@
-import { applyMiddleware, createStore } from 'redux'
+import { applyMiddleware, createStore, compose } from 'redux'
 
 import { routerMiddleware,  } from 'connected-react-router'
 import { createEpicMiddleware,  } from 'redux-observable'
-import { composeEnhancers,  } from './utils'
+// import { composeEnhancers,  } from './utils'
 import rootEpic from './root-epic'
 import rootReducer, { history } from './root-reducer'
 import services from '../services'
@@ -15,7 +15,8 @@ function configureStore (initialState?: object) {
   // configure middlewares
   const middlewares = [epicMiddleware, routerMiddleware(history)]
   // compose enhancers
-  const enhancer = composeEnhancers(applyMiddleware(...middlewares))
+  const enhancer = compose(applyMiddleware(...middlewares), window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__())
   // create store
   return createStore(rootReducer, initialState!, enhancer)
 }

@@ -12,6 +12,7 @@
     },
     "jsRules": {},
     "rules": {
+      "no-debugger": false,
       "no-consecutive-blank-lines": false,
       "no-shadowed-variable": false,
       "arrow-parens": false,

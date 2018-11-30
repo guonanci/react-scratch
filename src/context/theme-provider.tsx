@@ -22,10 +22,10 @@ interface IState {
 
 export class App extends React.Component<{}, IState> {
   readonly state: IState = { theme: themes.light }
-  // constructor (props: object) {
-  //   super(props)
-  //   this.toggleTheme = this.toggleTheme.bind(this)
-  // }
+  constructor (props: object) {
+    super(props)
+    this.toggleTheme = this.toggleTheme.bind(this)
+  }
 
   toggleTheme = () => {
     this.setState(state => ({
