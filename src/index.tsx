@@ -54,7 +54,10 @@ const App = (
                 <Menu.Item key='44'>Classify</Menu.Item>
               </MenuItemGroup>
             </SubMenu>
-            <SubMenu key='sub2' title={<span><img className='w2 mr1' src={imgTypeScript} alt='' />TypeScript</span>}>
+            <SubMenu
+              key='sub2'
+              title={<span><img className='sidebarImg mr1' src={imgTypeScript} alt='' />TypeScript</span>}
+            >
               <Menu.Item key='5'>Option 5</Menu.Item>
               <Menu.Item key='6'>Option 6</Menu.Item>
               <SubMenu key='sub3' title='Submenu'>
@@ -82,7 +85,7 @@ const App = (
               <Menu.Item key='18'>Option 18</Menu.Item>
               <Menu.Item key='19'>Option 19</Menu.Item>
             </SubMenu>
-            <SubMenu key='sub6' title={<span><img className='w2 mr1' src={imgRxJS} alt='' />Rxjs</span>}>
+            <SubMenu key='sub6' title={<span><img className='sidebarImg mr1' src={imgRxJS} alt='' />Rxjs</span>}>
               <Menu.Item key='20'>Option 20</Menu.Item>
               <Menu.Item key='21'>Option 21</Menu.Item>
               <Menu.Item key='22'>Option 22</Menu.Item>

@@ -8,7 +8,7 @@ interface IMouseProviderState {
 export interface IMouseProviderProps {
   render: (state: IMouseProviderState) => React.ReactNode,
 }
-
+// Basic Types and Intersection Types
 export class MouseProvider extends React.Component<IMouseProviderProps, IMouseProviderState> {
   readonly state: IMouseProviderState = { x: 0, y: 0 }
 

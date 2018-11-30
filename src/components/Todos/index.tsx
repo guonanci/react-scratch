@@ -27,7 +27,7 @@ interface ITodosProps {
   addTodo: (title: string) => any
 }
 
-export class Todos extends React.Component<ITodosProps, {}> {
+export class Todos extends React.PureComponent<ITodosProps, {}> {
   constructor (props: any) {
     super(props)
     this.onSubmit = this.onSubmit.bind(this)

@@ -1,5 +1,6 @@
 import { Map } from 'immutable'
 
+// Union Types
 type AllowedValue =
   string |
   boolean
