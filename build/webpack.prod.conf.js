@@ -51,13 +51,13 @@ if (config.build.gzip) {
 
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
-      asset: '[path].gz[query]',
-      algorithm: 'gzip',
+      // asset: '[path].gz[query]',
+      // algorithm: 'gzip',
       test: new RegExp(
         '\\.(' + config.build.gzipExts.join('|') + ')$'
       ),
       threshold: 10240,
-      minRatio: 0.8
+      // minRatio: 0.8
     })
   )
 }

@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "npm run lint&&webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "build": "npm run lint&&webpack --config build/build.js",
+    "build": "npm run lint&&node build/build.js",
     "lint": "tslint -p ./"
   },
   "engines": {
@@ -80,8 +80,8 @@
     "history": "^4.7.2",
     "immutable": "^4.0.0-rc.12",
     "moment": "^2.22.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
     "react-redux": "^5.1.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
