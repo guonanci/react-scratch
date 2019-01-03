@@ -5,7 +5,7 @@
     "baseUrl": "./", // enable absolute path imports. Base directory to resolve non-relative
     // affect code emit, just typechecking.
     "esModuleInterop": true,
-    "declaration": false, // false, Generate  corresponding `.d.ts` file.
+    "declaration": false, // false, Generate corresponding `.d.ts` file.
     "emitDecoratorMetadata": true, // Emit design-type metadata for decorated declarations in source.
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true, // false, Disallow inconsistently-based refenreces to the same file.
